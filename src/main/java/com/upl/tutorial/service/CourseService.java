@@ -9,12 +9,15 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.upl.tutorial.dto.AdminDashboardAnalyticsResponse;
 import com.upl.tutorial.dto.CourseManageRequest;
 import com.upl.tutorial.dto.CoursePageRequest;
 import com.upl.tutorial.dto.CoursePageResponse;
 import com.upl.tutorial.dto.CourseRequest;
 import com.upl.tutorial.dto.CourseResponse;
+import com.upl.tutorial.dto.InstructorMetricsDto;
 import com.upl.tutorial.dto.InstructorResponse;
+import com.upl.tutorial.dto.TopInstructorDto;
 import com.upl.tutorial.exception.InstructorNotActiveException;
 import com.upl.tutorial.exception.EntityNotFoundException;
 import com.upl.tutorial.model.Course;
@@ -140,6 +143,18 @@ public class CourseService {
         courseHistory.setmodifiedAt(LocalDateTime.now());
         courseHistoryRepo.save(courseHistory);
 
+    }
+
+    public AdminDashboardAnalyticsResponse fetchAdminAnalytics() {
+        AdminDashboardAnalyticsResponse response = new AdminDashboardAnalyticsResponse();
+        long totalPublishedCourses = courseRepo.countByStatus(CourseStatus.Active);
+        response.setTotalPublishedCourses(totalPublishedCourses);
+        List<TopInstructorDto> topInstructors = courseRepo.findTopInstructors(PageRequest.of(0,5));
+          
+        response.setTopInstructors(topInstructors);
+        InstructorMetricsDto instructorMetrics = userRepo.getInstructorMetrics();
+        response.setInstructorMetrics(instructorMetrics);
+        return response;
     }
 
 }
