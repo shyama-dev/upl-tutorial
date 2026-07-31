@@ -2,6 +2,7 @@ package com.upl.tutorial.controller;
 
 import java.util.List;
 
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ import com.upl.tutorial.dto.CourseRequest;
 import com.upl.tutorial.dto.CourseResponse;
 import com.upl.tutorial.service.CourseService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -34,8 +36,10 @@ public class CourseController {
 
    private final CourseService service;
 
+   @SecurityRequirements(value = {})
    @GetMapping
-   public ResponseEntity<Page<CoursePageResponse>> getActiveCourses(CoursePageRequest request) {
+   public ResponseEntity<Page<CoursePageResponse>> getActiveCourses
+               (@ParameterObject CoursePageRequest request) {
 
       Page<CoursePageResponse> courses = service.getActiveCourses(request);
       if (courses.isEmpty()) {

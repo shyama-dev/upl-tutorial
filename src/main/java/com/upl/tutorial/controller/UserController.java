@@ -15,6 +15,7 @@ import com.upl.tutorial.dto.UserResponse;
 import com.upl.tutorial.service.AuthService;
 import com.upl.tutorial.service.UserService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -34,6 +35,7 @@ public class UserController {
         return "Heloooo ";
      }
 
+    @SecurityRequirements(value = {})
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@Valid @RequestBody UserRequest request){
         UserResponse userResponse = service.register(request);
@@ -41,7 +43,8 @@ public class UserController {
         return new ResponseEntity<>(userResponse, HttpStatus.CREATED); 
 
     }
-
+    
+    @SecurityRequirements(value = {})
     @PostMapping("/login")
      public ResponseEntity<String> login(@Valid @RequestBody LoginRequest request){
         String response=authService.login(request.getEmail(), request.getPassword());

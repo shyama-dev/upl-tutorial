@@ -47,7 +47,7 @@ public class UserService {
 
  
     @Transactional
-    public void approveInstructor(InstructorApproveRequest request, UserStatus status) {
+    public void updateInstructorStatus(InstructorApproveRequest request, UserStatus status) {
        
         List<Integer> userIdList =List.of(request.getUserId(),request.getAdminId());
         List<Users> usersList=userRepo.findAllById(userIdList);

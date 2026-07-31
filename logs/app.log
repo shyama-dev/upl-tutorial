@@ -1,21 +1,21 @@
-2026-07-28T07:28:46.556+05:30  INFO 9908 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Starting TutorialApplication using Java 21.0.10 with PID 9908 (E:\UPL\tutorial\target\classes started by user in E:\UPL\tutorial)
-2026-07-28T07:28:46.585+05:30 DEBUG 9908 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Running with Spring Boot v4.0.7, Spring v7.0.8
-2026-07-28T07:28:46.589+05:30  INFO 9908 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : No active profile set, falling back to 1 default profile: "default"
-2026-07-28T07:28:51.861+05:30  INFO 9908 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-28T07:28:52.091+05:30  INFO 9908 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 184 ms. Found 6 JPA repository interfaces.
-2026-07-28T07:28:54.875+05:30  INFO 9908 --- [tutorial] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-07-28T07:28:54.941+05:30  INFO 9908 --- [tutorial] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-28T07:28:54.941+05:30  INFO 9908 --- [tutorial] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-28T07:28:55.190+05:30  INFO 9908 --- [tutorial] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8351 ms
-2026-07-28T07:28:55.674+05:30  INFO 9908 --- [tutorial] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-07-28T07:28:55.855+05:30  INFO 9908 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
-2026-07-28T07:28:57.850+05:30  INFO 9908 --- [tutorial] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-28T07:28:58.067+05:30  INFO 9908 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-07-28T07:28:59.392+05:30  WARN 9908 --- [tutorial] [main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 08S01
-2026-07-28T07:28:59.392+05:30  WARN 9908 --- [tutorial] [main] org.hibernate.orm.jdbc.error             : Communications link failure
+2026-07-31T18:25:04.810+05:30  INFO 5500 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Starting TutorialApplication using Java 21.0.10 with PID 5500 (E:\UPL\tutorial\target\classes started by user in E:\UPL\tutorial)
+2026-07-31T18:25:04.975+05:30 DEBUG 5500 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-07-31T18:25:05.015+05:30  INFO 5500 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-31T18:25:17.124+05:30  INFO 5500 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-31T18:25:17.451+05:30  INFO 5500 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 260 ms. Found 6 JPA repository interfaces.
+2026-07-31T18:25:21.328+05:30  INFO 5500 --- [tutorial] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-07-31T18:25:21.396+05:30  INFO 5500 --- [tutorial] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-31T18:25:21.399+05:30  INFO 5500 --- [tutorial] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-07-31T18:25:21.687+05:30  INFO 5500 --- [tutorial] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 16075 ms
+2026-07-31T18:25:22.522+05:30  INFO 5500 --- [tutorial] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-31T18:25:23.104+05:30  INFO 5500 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-07-31T18:25:25.685+05:30  INFO 5500 --- [tutorial] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-31T18:25:25.819+05:30  INFO 5500 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-31T18:25:27.320+05:30  WARN 5500 --- [tutorial] [main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 08S01
+2026-07-31T18:25:27.322+05:30  WARN 5500 --- [tutorial] [main] org.hibernate.orm.jdbc.error             : Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-2026-07-28T07:28:59.392+05:30  WARN 9908 --- [tutorial] [main] org.hibernate.orm.jdbc                   : HHH100046: Could not obtain connection to query JDBC database metadata
+2026-07-31T18:25:27.324+05:30  WARN 5500 --- [tutorial] [main] org.hibernate.orm.jdbc                   : HHH100046: Could not obtain connection to query JDBC database metadata
 
 org.hibernate.exception.JDBCConnectionException: Unable to obtain isolated JDBC connection [Communications link failure
 
@@ -193,14 +193,14 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:53) ~[mysql-connector-j-9.7.0.jar:9.7.0]
 	... 138 common frames omitted
 
-2026-07-28T07:28:59.442+05:30 ERROR 9908 --- [tutorial] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-2026-07-28T07:28:59.442+05:30 ERROR 9908 --- [tutorial] [main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter' defined in file [E:\UPL\tutorial\target\classes\com\upl\tutorial\security\JwtFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userInfoService' defined in file [E:\UPL\tutorial\target\classes\com\upl\tutorial\security\UserInfoService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.upl.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-2026-07-28T07:28:59.575+05:30  INFO 9908 --- [tutorial] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-07-28T07:28:59.594+05:30  WARN 9908 --- [tutorial] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2026-07-28T07:28:59.635+05:30  INFO 9908 --- [tutorial] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-07-31T18:25:27.361+05:30 ERROR 5500 --- [tutorial] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2026-07-31T18:25:27.391+05:30 ERROR 5500 --- [tutorial] [main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter' defined in file [E:\UPL\tutorial\target\classes\com\upl\tutorial\security\JwtFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userInfoService' defined in file [E:\UPL\tutorial\target\classes\com\upl\tutorial\security\UserInfoService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.upl.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-07-31T18:25:27.554+05:30  INFO 5500 --- [tutorial] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-07-31T18:25:27.573+05:30  WARN 5500 --- [tutorial] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-07-31T18:25:27.610+05:30  INFO 5500 --- [tutorial] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-07-28T07:28:59.676+05:30 ERROR 9908 --- [tutorial] [main] o.s.boot.SpringApplication               : Application run failed
+2026-07-31T18:25:27.676+05:30 ERROR 5500 --- [tutorial] [main] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.context.ApplicationContextException: Unable to start web server
 	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-web-server-4.0.7.jar:4.0.7]
@@ -353,187 +353,3 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260) ~[hibernate-core-7.2.19.Final.jar:7.2.19.Final]
 	... 116 common frames omitted
 
-2026-07-28T07:29:55.364+05:30  INFO 9024 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Starting TutorialApplication using Java 21.0.10 with PID 9024 (E:\UPL\tutorial\target\classes started by user in E:\UPL\tutorial)
-2026-07-28T07:29:55.371+05:30 DEBUG 9024 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Running with Spring Boot v4.0.7, Spring v7.0.8
-2026-07-28T07:29:55.371+05:30  INFO 9024 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : No active profile set, falling back to 1 default profile: "default"
-2026-07-28T07:29:59.175+05:30  INFO 9024 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-28T07:29:59.393+05:30  INFO 9024 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176 ms. Found 6 JPA repository interfaces.
-2026-07-28T07:30:02.331+05:30  INFO 9024 --- [tutorial] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-07-28T07:30:02.408+05:30  INFO 9024 --- [tutorial] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-28T07:30:02.408+05:30  INFO 9024 --- [tutorial] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-28T07:30:02.712+05:30  INFO 9024 --- [tutorial] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7100 ms
-2026-07-28T07:30:03.898+05:30  INFO 9024 --- [tutorial] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-07-28T07:30:04.143+05:30  INFO 9024 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
-2026-07-28T07:30:05.723+05:30  INFO 9024 --- [tutorial] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-28T07:30:05.839+05:30  INFO 9024 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-07-28T07:30:07.570+05:30  INFO 9024 --- [tutorial] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ca4f762
-2026-07-28T07:30:07.586+05:30  INFO 9024 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-07-28T07:30:08.155+05:30  INFO 9024 --- [tutorial] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/tutorial_db]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.46
-	Default catalog/schema: tutorial_db/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-07-28T07:30:11.239+05:30  INFO 9024 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-07-28T07:30:11.490+05:30  INFO 9024 --- [tutorial] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T07:30:12.000+05:30  INFO 9024 --- [tutorial] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-07-28T07:30:15.885+05:30 DEBUG 9024 --- [tutorial] [main] com.upl.tutorial.security.JwtFilter      : Filter 'jwtFilter' configured for use
-2026-07-28T07:30:17.502+05:30  INFO 9024 --- [tutorial] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2026-07-28T07:30:17.502+05:30  WARN 9024 --- [tutorial] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2026-07-28T07:30:18.254+05:30  WARN 9024 --- [tutorial] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-07-28T07:30:19.108+05:30 DEBUG 9024 --- [tutorial] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2026-07-28T07:30:21.168+05:30  INFO 9024 --- [tutorial] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-07-28T07:30:21.195+05:30  INFO 9024 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Started TutorialApplication in 27.363 seconds (process running for 29.057)
-2026-07-28T07:30:21.212+05:30  WARN 9024 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-07-28T07:30:21.220+05:30  WARN 9024 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-07-28T07:30:42.374+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-07-28T07:30:42.376+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-07-28T07:30:42.382+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2026-07-28T07:30:42.464+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
-2026-07-28T07:30:42.506+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:42.523+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
-2026-07-28T07:30:42.809+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
-2026-07-28T07:30:42.809+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
-2026-07-28T07:30:42.823+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
-2026-07-28T07:30:42.829+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
-2026-07-28T07:30:42.830+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
-2026-07-28T07:30:42.840+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:42.836+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:42.837+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:42.860+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
-2026-07-28T07:30:42.863+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
-2026-07-28T07:30:42.842+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
-2026-07-28T07:30:42.848+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:42.850+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:42.965+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
-2026-07-28T07:30:42.975+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
-2026-07-28T07:30:44.783+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
-2026-07-28T07:30:44.816+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:44.823+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
-2026-07-28T07:30:45.058+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
-2026-07-28T07:30:45.192+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:45.238+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
-2026-07-28T07:30:45.333+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2026-07-28T07:30:45.336+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:30:45.339+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2026-07-28T07:30:47.778+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2373 ms
-2026-07-28T07:31:37.280+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /tutorials?courseId=2
-2026-07-28T07:31:37.283+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:31:37.288+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
-2026-07-28T07:31:37.307+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /error?courseId=2
-2026-07-28T07:31:37.308+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /error?courseId=2
-2026-07-28T07:31:37.346+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:34:56.400+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /instructors/login
-2026-07-28T07:34:56.402+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:34:56.403+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /instructors/login
-2026-07-28T07:34:56.609+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.UserController.login() with argument(s) = [com.upl.tutorial.dto.LoginRequest@75adb6f5]
-2026-07-28T07:34:56.609+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.AuthService.login() with argument(s) = [Shyama@test.com, Shyama]
-2026-07-28T07:34:57.178+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
-2026-07-28T07:34:57.281+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-6] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
-2026-07-28T07:34:57.451+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
-2026-07-28T07:34:57.451+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.service.AuthService     : **************Authenticated***********
-2026-07-28T07:34:57.627+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.AuthService.login() with result = eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJTaHlhbWFAdGVzdC5jb20iLCJpYXQiOjE3ODUyMDQyOTcsImV4cCI6MTc4NTI5MDY5N30.HuoXmDnQMt7HPsIWjKL1VF3f2GFSa7gPF6lAbl4cRCDfSYcG3yaN53QADPuDYXt2
-2026-07-28T07:34:57.627+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.UserController.login() with result = <200 OK OK,eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJTaHlhbWFAdGVzdC5jb20iLCJpYXQiOjE3ODUyMDQyOTcsImV4cCI6MTc4NTI5MDY5N30.HuoXmDnQMt7HPsIWjKL1VF3f2GFSa7gPF6lAbl4cRCDfSYcG3yaN53QADPuDYXt2,[]>
-2026-07-28T07:35:52.553+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /courses?page=0&size=0&sortBy=string&sortDir=string
-2026-07-28T07:35:52.555+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:35:52.556+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /courses?page=0&size=0&sortBy=string&sortDir=string
-2026-07-28T07:35:52.585+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.CourseController.getActiveCourses() with argument(s) = [CoursePageRequest(page=0, size=0, sortBy=string, sortDir=string)]
-2026-07-28T07:35:52.603+05:30  INFO 9024 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.CourseService.getActiveCourses() with argument(s) = [CoursePageRequest(page=0, size=0, sortBy=string, sortDir=string)]
-2026-07-28T07:35:52.603+05:30 ERROR 9024 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Illegal argument: [CoursePageRequest(page=0, size=0, sortBy=string, sortDir=string)] in com.upl.tutorial.service.CourseService.getActiveCourses()
-2026-07-28T07:35:52.618+05:30 ERROR 9024 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Illegal argument: [CoursePageRequest(page=0, size=0, sortBy=string, sortDir=string)] in com.upl.tutorial.controller.CourseController.getActiveCourses()
-2026-07-28T07:37:07.864+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
-2026-07-28T07:37:07.865+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:07.867+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
-2026-07-28T07:37:07.904+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
-2026-07-28T07:37:07.920+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
-2026-07-28T07:37:07.904+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
-2026-07-28T07:37:07.920+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
-2026-07-28T07:37:07.920+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
-2026-07-28T07:37:07.920+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:07.920+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:07.920+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:07.920+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:07.936+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
-2026-07-28T07:37:07.940+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:07.940+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
-2026-07-28T07:37:07.940+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
-2026-07-28T07:37:07.940+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
-2026-07-28T07:37:07.940+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
-2026-07-28T07:37:08.772+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
-2026-07-28T07:37:08.773+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
-2026-07-28T07:37:08.779+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:08.780+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:08.780+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
-2026-07-28T07:37:08.781+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
-2026-07-28T07:37:08.826+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2026-07-28T07:37:08.832+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:37:08.835+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2026-07-28T07:45:59.824+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2026-07-28T07:45:59.835+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:45:59.844+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2026-07-28T07:46:00.215+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
-2026-07-28T07:46:00.217+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T07:46:00.221+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
-2026-07-28T07:46:00.225+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-07-28T07:46:00.226+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /error
-2026-07-28T07:46:00.316+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T08:03:07.443+05:30  WARN 9024 --- [tutorial] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m29s337ms813µs300ns).
-2026-07-28T11:04:33.207+05:30  WARN 9024 --- [tutorial] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h1m29s921ms175µs100ns).
-2026-07-28T12:05:02.731+05:30  WARN 9024 --- [tutorial] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m29s85ms755µs800ns).
-2026-07-28T18:16:03.592+05:30  WARN 9024 --- [tutorial] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h11m5s668ms505µs600ns).
-2026-07-28T18:21:38.440+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
-2026-07-28T18:21:38.498+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:38.502+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
-2026-07-28T18:21:38.939+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
-2026-07-28T18:21:38.943+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
-2026-07-28T18:21:38.943+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
-2026-07-28T18:21:38.945+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:38.946+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:38.946+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
-2026-07-28T18:21:38.948+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
-2026-07-28T18:21:38.955+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
-2026-07-28T18:21:38.955+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
-2026-07-28T18:21:38.970+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:38.970+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
-2026-07-28T18:21:38.960+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:38.970+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:38.976+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
-2026-07-28T18:21:38.976+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
-2026-07-28T18:21:39.668+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
-2026-07-28T18:21:39.672+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:39.672+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
-2026-07-28T18:21:39.793+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2026-07-28T18:21:39.795+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:39.797+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2026-07-28T18:21:41.098+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2026-07-28T18:21:41.121+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:41.123+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2026-07-28T18:21:41.451+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
-2026-07-28T18:21:41.453+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:21:41.466+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
-2026-07-28T18:21:41.474+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-07-28T18:21:41.490+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /error
-2026-07-28T18:21:41.545+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:24:07.383+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /tutorials?courseId=3
-2026-07-28T18:24:07.385+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:24:07.387+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
-2026-07-28T18:24:07.415+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error?courseId=3
-2026-07-28T18:24:07.417+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /error?courseId=3
-2026-07-28T18:24:07.438+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:45:05.206+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
-2026-07-28T18:45:05.231+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:45:05.234+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
-2026-07-28T18:45:05.666+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
-2026-07-28T18:45:05.669+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T18:45:05.687+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
-2026-07-28T18:45:05.719+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-07-28T18:45:05.748+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /error
-2026-07-28T18:45:05.774+05:30 DEBUG 9024 --- [tutorial] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-07-28T19:33:10.617+05:30  WARN 9024 --- [tutorial] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m5s897ms305µs200ns).
-2026-07-28T19:43:37.282+05:30  WARN 9024 --- [tutorial] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m31s619ms953µs900ns).

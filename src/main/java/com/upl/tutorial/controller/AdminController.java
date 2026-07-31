@@ -33,7 +33,7 @@ public class AdminController {
     public ResponseEntity<String> approveInstructor( @Valid @RequestBody InstructorApproveRequest request) {
           
         request.setStatus(ApprovalStatus.Approved); 
-        service.approveInstructor(request, UserStatus.Active);        
+        service.updateInstructorStatus(request, UserStatus.Active);        
 
         return ResponseEntity.ok("Instructor Approved");
     }
@@ -41,7 +41,7 @@ public class AdminController {
     @PostMapping("/reject")
     public ResponseEntity<String> rejectInstructor( @Valid @RequestBody InstructorApproveRequest request) {
         request.setStatus(ApprovalStatus.Rejected);
-        service.approveInstructor(request, UserStatus.Rejected);
+        service.updateInstructorStatus(request, UserStatus.Rejected);
         return ResponseEntity.ok("Instructor Rejected");
     }
 
