@@ -45,6 +45,7 @@ public class SecurityConfig {
                             //public endpoints
                                 .requestMatchers("/instructors/**","/error").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/courses").permitAll()
+                                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                                 //admin end points
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.POST, "/courses/**","/tutorials/**").hasRole("INSTRUCTOR")                                
