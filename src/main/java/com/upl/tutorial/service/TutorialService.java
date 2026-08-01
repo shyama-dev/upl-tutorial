@@ -3,6 +3,9 @@ package com.upl.tutorial.service;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -73,8 +76,11 @@ public class TutorialService {
         if (null != request.getYoutubeLink() && !request.getYoutubeLink().isBlank())
             tutorial.setyoutubeLink(request.getYoutubeLink());
 
-         Users user =userRepo.findById(request.getInstructorId()).orElseThrow(()->
-        new EntityNotFoundException("Instructor not found for id :"+request.getInstructorId()));
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String loggedInUSerEmail = userDetails.getUsername();
+         Users user =userRepo.findByEmail(loggedInUSerEmail).orElseThrow(()->
+        new EntityNotFoundException("Instructor not found for :"+loggedInUSerEmail));
 
         TutorialHistory tutorialHistory= new TutorialHistory();
         tutorialHistory.setTutorial(tutorial);

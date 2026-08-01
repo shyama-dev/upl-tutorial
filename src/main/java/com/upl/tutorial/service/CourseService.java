@@ -6,6 +6,9 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +17,6 @@ import com.upl.tutorial.dto.CourseManageRequest;
 import com.upl.tutorial.dto.CoursePageRequest;
 import com.upl.tutorial.dto.CoursePageResponse;
 import com.upl.tutorial.dto.CourseRequest;
-import com.upl.tutorial.dto.CourseResponse;
 import com.upl.tutorial.dto.InstructorMetricsDto;
 import com.upl.tutorial.dto.InstructorResponse;
 import com.upl.tutorial.dto.TopInstructorDto;
@@ -44,9 +46,12 @@ public class CourseService {
 
     public int createCourse(CourseRequest request) {
 
-        Users instructor = userRepo.findById(request.getInstructorId()).orElseThrow(
-                () -> new EntityNotFoundException("Instructor not found for id "
-                        + request.getInstructorId()));
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String loggedInUserEmail = userDetails.getUsername();
+        Users instructor = userRepo.findByEmail(loggedInUserEmail).orElseThrow(
+                () -> new EntityNotFoundException("Instructor not found for email"
+                        + loggedInUserEmail));
         if (instructor.getStatus().equals(UserStatus.Active)) {
             Course course = new Course();
             course.setInstructor(instructor);
@@ -59,22 +64,43 @@ public class CourseService {
 
         } else {
             throw new InstructorNotActiveException("Instructor not "
-                    + "in active status for id :" + request.getInstructorId());
+                    + "in active status for id :" + instructor.getuserId());
 
         }
 
     }
 
-    public List<CourseResponse> getCoursesByInstructor(int instructor_id) {
+    public Page<CoursePageResponse> getCoursesByLoggedInInstructor(CoursePageRequest request) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String loggedInUSerEmail = userDetails.getUsername();
+        Users instructor = userRepo.findByEmail(loggedInUSerEmail).orElseThrow(
+                () -> new EntityNotFoundException("Instructor not found for email"
+                        + loggedInUSerEmail));
 
-        List<Course> courseList = courseRepo.findByInstructor_UserIdAndStatus(instructor_id,CourseStatus.Active);
-        List<CourseResponse> responseList = courseList.stream()
-                .map(course -> new CourseResponse(course.getcourseId(), course.getTitle(),
-                        course.getDescription(), course.getInstructor().getuserId(),
-                        course.getStatus().name(), course.getcreatedAt()))
-                .toList();
-                
-        return responseList;
+        Sort sort = request.getSortDir().equalsIgnoreCase("desc")
+                ? Sort.by(request.getSortBy()).descending()
+                : Sort.by(request.getSortBy()).ascending();
+
+        Pageable pageable = PageRequest.of(request.getPage() - 1, request.getSize(), sort);
+        Page<Course> courseList = courseRepo.findByInstructor_UserIdAndStatus(instructor.getuserId(), CourseStatus.Active, pageable);
+
+        return courseList.map(course -> {
+            CoursePageResponse dto = new CoursePageResponse();
+            dto.setTitle(course.getTitle());
+            dto.setDescription(course.getDescription());
+            dto.setStatus(course.getStatus().name());
+            dto.setCourseId(course.getcourseId());
+
+            if (course.getInstructor() != null) {
+                InstructorResponse instructorDto = new InstructorResponse();
+                instructorDto.setName(course.getInstructor().getName());
+                instructorDto.setEmail(course.getInstructor().getEmail());
+                instructorDto.setStatus(course.getInstructor().getStatus().name());
+                dto.setInstructor(instructorDto);
+            }
+            return dto;
+        });
     }
 
     public Page<CoursePageResponse> getActiveCourses(CoursePageRequest request) {
@@ -83,7 +109,7 @@ public class CourseService {
                 ? Sort.by(request.getSortBy()).descending()
                 : Sort.by(request.getSortBy()).ascending();
 
-        Pageable pageable = PageRequest.of(request.getPage(), request.getSize(), sort);
+        Pageable pageable = PageRequest.of(request.getPage()-1, request.getSize(), sort);
         Page<Course> courseList = courseRepo.findAllByStatus(CourseStatus.Active, pageable);
 
         Page<CoursePageResponse> responsePage = courseList.map(course -> {
@@ -91,6 +117,7 @@ public class CourseService {
             dto.setTitle(course.getTitle());
             dto.setDescription(course.getDescription());
             dto.setStatus(course.getStatus().name());
+            dto.setCourseId(course.getcourseId());
 
             if (course.getInstructor() != null) {
                 InstructorResponse instructorDto = new InstructorResponse();

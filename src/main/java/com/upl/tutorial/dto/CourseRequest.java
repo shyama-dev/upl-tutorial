@@ -1,6 +1,5 @@
 package com.upl.tutorial.dto;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,9 +16,4 @@ public class CourseRequest {
     @NotBlank(message = "Description is mandatory")
     private String description;
 
-    @Min(value = 1, message = "Instructor ID must be at least 1")
-    private int instructorId;
-
-    private String status;
-        
 }

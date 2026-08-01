@@ -2,9 +2,7 @@ package com.upl.tutorial.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -40,7 +38,7 @@ public class TutorialController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Integer> create(@Valid@RequestBody TutorialRequest request){
+    public ResponseEntity<Integer> create(@Valid @RequestBody TutorialRequest request){
 
         int tutorialId = service.create(request);
         return ResponseEntity.ok(tutorialId);

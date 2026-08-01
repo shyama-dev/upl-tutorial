@@ -11,6 +11,7 @@ public class CoursePageResponse {
 
     private String title;
     private String description;
+    private Integer courseId;
     private InstructorResponse instructor;
     private String status;
         

@@ -1,6 +1,8 @@
 package com.upl.tutorial.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
@@ -21,6 +23,7 @@ import org.mockito.Mock;
 import com.upl.tutorial.dto.TutorialManageRequest;
 import com.upl.tutorial.dto.TutorialRequest;
 import com.upl.tutorial.dto.TutorialResponse;
+import com.upl.tutorial.exception.EntityNotFoundException;
 import com.upl.tutorial.model.Course;
 import com.upl.tutorial.model.Tutorial;
 import com.upl.tutorial.model.TutorialHistory;
@@ -31,8 +34,7 @@ import com.upl.tutorial.repository.TutorialRepository;
 import com.upl.tutorial.repository.UserRepository;
 
 public class TutorialServiceTest {
-    /*
-   
+
     @Mock
     private TutorialRepository tutorialRepo;
 
@@ -51,7 +53,7 @@ public class TutorialServiceTest {
     private Course course;
     private Tutorial tutorial;
     private Users instructor;
-
+/*
     @BeforeEach
     void setUp() {
         course = new Course();
@@ -87,7 +89,7 @@ public class TutorialServiceTest {
             // Simulating assigned ID on save (assumes gettutorialId returns 100)
             savedTutorial.settutorialId(100);
             // Adjust mock return value matching your entity's getter implementation
-            
+
             when(courseRepo.findById(1)).thenReturn(Optional.of(course));
             when(tutorialRepo.save(any(Tutorial.class))).thenReturn(savedTutorial);
 
@@ -97,34 +99,37 @@ public class TutorialServiceTest {
             // Assert
             assertEquals(100, tutorialId, "Tutorial ID should match saved tutorial ID");
             verify(courseRepo, times(1)).findById(1);
-            
+
             ArgumentCaptor<Tutorial> captor = ArgumentCaptor.forClass(Tutorial.class);
             verify(tutorialRepo, times(1)).save(captor.capture());
 
             Tutorial capturedTutorial = captor.getValue();
-            assertThat(capturedTutorial.getCourse()).isEqualTo(course);
-            assertThat(capturedTutorial.getTitle()).isEqualTo("Java Basics");
-            assertThat(capturedTutorial.getContent()).isEqualTo("Introductory Java content");
-            assertThat(capturedTutorial.getyoutubeLink()).isEqualTo("https://youtube.com/watch?v=123");
-            assertThat(capturedTutorial.getcreatedAt()).isNotNull();
+
+            assertEquals(course, capturedTutorial.getCourse());
+            assertEquals("Java Basics", capturedTutorial.getTitle());
+            assertEquals("Introductory Java content", capturedTutorial.getContent());
+            assertEquals("https://youtube.com/watch?v=123", capturedTutorial.getyoutubeLink());
+            assertNotNull(capturedTutorial.getcreatedAt());
         }
 
         @Test
         @DisplayName("Should throw EntityNotFoundException when course does not exist")
-        void create_CourseNotFound() {
-            // Arrange
-            TutorialRequest request = new TutorialRequest();
-            request.setCourseId(99);
+   void create_CourseNotFound() {
+    // Arrange
+    TutorialRequest request = new TutorialRequest();
+    request.setCourseId(99);
 
-            when(courseRepo.findById(99)).thenReturn(Optional.empty());
+    when(courseRepo.findById(99)).thenReturn(Optional.empty());
 
-            // Act & Assert
-            assertThatThrownBy(() -> tutorialService.create(request))
-                    .isInstanceOf(EntityNotFoundException.class)
-                    .hasMessage("Course not found for id :99");
+    // Act & Assert
+    EntityNotFoundException exception = assertThrows(
+        EntityNotFoundException.class, 
+        () -> tutorialService.create(request)
+    );
 
-            verify(tutorialRepo, never()).save(any());
-        }
+    assertEquals("Course not found for id :99", exception.getMessage());
+    verify(tutorialRepo, never()).save(any());
+    }
     }
 
     // ==========================================
@@ -217,9 +222,9 @@ public class TutorialServiceTest {
             TutorialManageRequest request = new TutorialManageRequest();
             request.setTutorialId(10);
             request.setInstructorId(5);
-            request.setTitle(" ");           // blank -> should not update
-            request.setContent(null);        // null -> should not update
-            request.setYoutubeLink("");      // empty -> should not update
+            request.setTitle(" "); // blank -> should not update
+            request.setContent(null); // null -> should not update
+            request.setYoutubeLink(""); // empty -> should not update
             request.setChanges("No real field changes");
 
             when(tutorialRepo.findById(10)).thenReturn(Optional.of(tutorial));
@@ -272,5 +277,5 @@ public class TutorialServiceTest {
 
             verify(tutorialHistoryRepo, never()).save(any());
         }
-    }*/
+    } */
 }

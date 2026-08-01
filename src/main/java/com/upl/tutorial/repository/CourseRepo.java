@@ -16,7 +16,7 @@ import com.upl.tutorial.model.CourseStatus;
 public interface CourseRepo extends JpaRepository<Course,Integer> {
 
  
-List<Course> findByInstructor_UserIdAndStatus( int instructor_id,CourseStatus status);  
+Page<Course> findByInstructor_UserIdAndStatus(int instructor_id, CourseStatus status, Pageable pageable);
 
 Page<Course> findAllByStatus(CourseStatus status, Pageable pageable);
 

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CoursePageRequest {
-    private int page = 0;          
+    private int page = 1;          
     private int size = 10;         
     private String sortBy = "title";  
     private String sortDir = "asc"; 
