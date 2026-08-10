@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.upl.tutorial.dto.LoginRequest;
+import com.upl.tutorial.dto.LoginResponse;
 import com.upl.tutorial.dto.UserRequest;
 import com.upl.tutorial.dto.UserResponse;
 import com.upl.tutorial.service.AuthService;
@@ -45,8 +46,8 @@ public class UserController {
     
     @SecurityRequirements(value = {})
     @PostMapping("/login")
-     public ResponseEntity<String> login(@Valid @RequestBody LoginRequest request){
-        String response=authService.login(request.getEmail(), request.getPassword());
+     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request){
+        LoginResponse response=authService.login(request.getEmail(), request.getPassword());
         return new ResponseEntity<>(response,HttpStatus.OK);
      }
     

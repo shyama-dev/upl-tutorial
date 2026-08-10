@@ -19,7 +19,6 @@ import com.upl.tutorial.dto.CoursePageRequest;
 import com.upl.tutorial.dto.CoursePageResponse;
 import com.upl.tutorial.dto.CourseRequest;
 import com.upl.tutorial.service.CourseService;
-import com.upl.tutorial.service.UserService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import jakarta.validation.Valid;
