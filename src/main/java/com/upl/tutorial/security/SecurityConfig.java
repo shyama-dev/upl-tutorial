@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import java.net.http.HttpRequest;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -44,6 +45,7 @@ public class SecurityConfig {
                             //public endpoints
                                 .requestMatchers("/instructors/**","/error").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/courses").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/tutorials/**").permitAll()
                                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                                 //admin end points
                                 .requestMatchers("/admin/**").hasRole("ADMIN")

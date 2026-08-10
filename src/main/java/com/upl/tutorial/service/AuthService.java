@@ -38,7 +38,7 @@ public class AuthService {
         log.info("**************ROLE ***********"+role);
 
         loginResponse.setToken(token);
-        loginResponse.setUserRole(role);
+        loginResponse.setUserRole(role.substring(5).toLowerCase()); // Remove "ROLE_" prefix from the role
         return loginResponse;
 
     }

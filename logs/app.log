@@ -1333,3 +1333,229 @@ io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs 
 2026-08-10T15:52:59.442+05:30  INFO 10956 --- [tutorial] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-08-10T15:52:59.454+05:30  INFO 10956 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-08-10T15:52:59.536+05:30  INFO 10956 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-08-10T21:09:26.194+05:30  INFO 12964 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : Starting TutorialApplicationTests using Java 21.0.10 with PID 12964 (started by user in E:\UPL\tutorial)
+2026-08-10T21:09:26.198+05:30 DEBUG 12964 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-08-10T21:09:26.199+05:30  INFO 12964 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-08-10T21:09:29.787+05:30  INFO 12964 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-10T21:09:29.993+05:30  INFO 12964 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 6 JPA repository interfaces.
+2026-08-10T21:09:32.024+05:30  INFO 12964 --- [tutorial] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-10T21:09:32.200+05:30  INFO 12964 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-08-10T21:09:33.650+05:30  INFO 12964 --- [tutorial] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-10T21:09:33.728+05:30  INFO 12964 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-10T21:09:35.031+05:30  INFO 12964 --- [tutorial] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a285418
+2026-08-10T21:09:35.046+05:30  INFO 12964 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-10T21:09:35.327+05:30  INFO 12964 --- [tutorial] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/tutorial_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: tutorial_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-10T21:09:38.227+05:30  INFO 12964 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-10T21:09:38.532+05:30  INFO 12964 --- [tutorial] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-10T21:09:39.153+05:30  INFO 12964 --- [tutorial] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-10T21:09:45.734+05:30  INFO 12964 --- [tutorial] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-08-10T21:09:45.734+05:30  WARN 12964 --- [tutorial] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-08-10T21:09:46.392+05:30  WARN 12964 --- [tutorial] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-10T21:09:47.574+05:30 DEBUG 12964 --- [tutorial] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-08-10T21:09:51.118+05:30  INFO 12964 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : Started TutorialApplicationTests in 25.856 seconds (process running for 36.446)
+2026-08-10T21:09:51.133+05:30  WARN 12964 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-10T21:09:51.133+05:30  WARN 12964 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-10T21:09:51.398+05:30  INFO 12964 --- [tutorial] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-10T21:09:51.421+05:30  INFO 12964 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-08-10T21:09:51.449+05:30  INFO 12964 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-08-10T21:10:12.072+05:30  INFO 792 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Starting TutorialApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 792 (E:\UPL\tutorial\target\tutorial-0.0.1-SNAPSHOT.jar started by user in E:\UPL\tutorial)
+2026-08-10T21:10:12.080+05:30 DEBUG 792 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-08-10T21:10:12.080+05:30  INFO 792 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-08-10T21:10:15.919+05:30  INFO 792 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-10T21:10:16.091+05:30  INFO 792 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 6 JPA repository interfaces.
+2026-08-10T21:10:19.239+05:30  INFO 792 --- [tutorial] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-08-10T21:10:19.306+05:30  INFO 792 --- [tutorial] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-10T21:10:19.307+05:30  INFO 792 --- [tutorial] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-10T21:10:19.394+05:30  INFO 792 --- [tutorial] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7068 ms
+2026-08-10T21:10:20.060+05:30  INFO 792 --- [tutorial] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-10T21:10:20.303+05:30  INFO 792 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-08-10T21:10:22.028+05:30  INFO 792 --- [tutorial] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-10T21:10:22.121+05:30  INFO 792 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-10T21:10:23.470+05:30  INFO 792 --- [tutorial] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a5efbb9
+2026-08-10T21:10:23.486+05:30  INFO 792 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-10T21:10:24.016+05:30  INFO 792 --- [tutorial] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/tutorial_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: tutorial_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-10T21:10:26.607+05:30  INFO 792 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-10T21:10:26.830+05:30  INFO 792 --- [tutorial] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-10T21:10:27.329+05:30  INFO 792 --- [tutorial] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-10T21:10:32.160+05:30 DEBUG 792 --- [tutorial] [main] com.upl.tutorial.security.JwtFilter      : Filter 'jwtFilter' configured for use
+2026-08-10T21:10:34.160+05:30  INFO 792 --- [tutorial] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-08-10T21:10:34.160+05:30  WARN 792 --- [tutorial] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-08-10T21:10:34.821+05:30  WARN 792 --- [tutorial] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-10T21:10:35.859+05:30 DEBUG 792 --- [tutorial] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-08-10T21:10:38.815+05:30  INFO 792 --- [tutorial] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-08-10T21:10:38.909+05:30  INFO 792 --- [tutorial] [main] com.upl.tutorial.TutorialApplication     : Started TutorialApplication in 28.767 seconds (process running for 30.817)
+2026-08-10T21:10:38.988+05:30  WARN 792 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-10T21:10:39.021+05:30  WARN 792 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-10T21:11:22.375+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-10T21:11:22.377+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-08-10T21:11:22.426+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 36 ms
+2026-08-10T21:11:22.508+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /courses?page=1&size=10
+2026-08-10T21:11:22.576+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-08-10T21:11:22.590+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /courses?page=1&size=10
+2026-08-10T21:11:22.876+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-1] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.CourseController.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:11:22.887+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-1] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.CourseService.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:11:23.509+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.course_id,c1_0.created_at,c1_0.description,c1_0.instructor_id,c1_0.status,c1_0.title from course c1_0 where c1_0.status=? order by c1_0.title limit ?
+2026-08-10T21:11:23.738+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:11:23.755+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:11:23.776+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-1] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.CourseService.getActiveCourses() with result = Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances
+2026-08-10T21:11:23.795+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-1] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.CourseController.getActiveCourses() with result = <200 OK OK,Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances,[]>
+2026-08-10T21:11:24.200+05:30  WARN 792 --- [tutorial] [http-nio-8080-exec-1] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-08-10T21:11:49.827+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /tutorials?courseId=2
+2026-08-10T21:11:49.828+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-08-10T21:11:49.833+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-2] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2026-08-10T21:11:49.890+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error?courseId=2
+2026-08-10T21:11:49.893+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /error?courseId=2
+2026-08-10T21:11:49.950+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-08-10T21:15:02.923+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /courses?page=1&size=10
+2026-08-10T21:15:02.986+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-08-10T21:15:02.991+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /courses?page=1&size=10
+2026-08-10T21:15:03.130+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-3] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.CourseController.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:15:03.131+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-3] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.CourseService.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:15:03.202+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.course_id,c1_0.created_at,c1_0.description,c1_0.instructor_id,c1_0.status,c1_0.title from course c1_0 where c1_0.status=? order by c1_0.title limit ?
+2026-08-10T21:15:03.255+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:15:03.263+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:15:03.270+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-3] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.CourseService.getActiveCourses() with result = Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances
+2026-08-10T21:15:03.272+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-3] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.CourseController.getActiveCourses() with result = <200 OK OK,Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances,[]>
+2026-08-10T21:15:46.331+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /instructors/login
+2026-08-10T21:15:46.331+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-08-10T21:15:46.331+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /instructors/login
+2026-08-10T21:15:47.033+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-4] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.UserController.login() with argument(s) = [com.upl.tutorial.dto.LoginRequest@451c1587]
+2026-08-10T21:15:47.033+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-4] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.AuthService.login() with argument(s) = [sasi@test.com, sasi@test.com]
+2026-08-10T21:15:47.432+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
+2026-08-10T21:15:47.451+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-4] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
+2026-08-10T21:15:47.824+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-08-10T21:15:47.840+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-4] com.upl.tutorial.service.AuthService     : **************Authenticated***********
+2026-08-10T21:15:48.405+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-4] com.upl.tutorial.service.AuthService     : **************ROLE ***********ROLE_INSTRUCTOR
+2026-08-10T21:15:48.405+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-4] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.AuthService.login() with result = LoginResponse(token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYXNpQHRlc3QuY29tIiwiaWF0IjoxNzg2Mzc2NzQ4LCJleHAiOjE3ODY0NjMxNDh9.Ex0ZOdIPwoEkKYtBK9SOYI07YjKiS1Q00VvgHANb9Xbe9fuS1Xx0Zq9ucX7Cwm0Z, userRole=ROLE_INSTRUCTOR)
+2026-08-10T21:15:48.405+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-4] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.UserController.login() with result = <200 OK OK,LoginResponse(token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYXNpQHRlc3QuY29tIiwiaWF0IjoxNzg2Mzc2NzQ4LCJleHAiOjE3ODY0NjMxNDh9.Ex0ZOdIPwoEkKYtBK9SOYI07YjKiS1Q00VvgHANb9Xbe9fuS1Xx0Zq9ucX7Cwm0Z, userRole=ROLE_INSTRUCTOR),[]>
+2026-08-10T21:15:48.533+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /courses?page=1&size=10
+2026-08-10T21:15:49.023+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
+2026-08-10T21:15:49.038+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-5] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
+2026-08-10T21:15:49.040+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /courses?page=1&size=10
+2026-08-10T21:15:49.088+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-5] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.CourseController.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:15:49.089+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-5] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.CourseService.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:15:49.093+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.course_id,c1_0.created_at,c1_0.description,c1_0.instructor_id,c1_0.status,c1_0.title from course c1_0 where c1_0.status=? order by c1_0.title limit ?
+2026-08-10T21:15:49.116+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:15:49.150+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:15:49.179+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-5] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.CourseService.getActiveCourses() with result = Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances
+2026-08-10T21:15:49.183+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-5] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.CourseController.getActiveCourses() with result = <200 OK OK,Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances,[]>
+2026-08-10T21:15:53.473+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /tutorials?courseId=2
+2026-08-10T21:15:53.484+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
+2026-08-10T21:15:53.491+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-6] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
+2026-08-10T21:15:53.498+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /tutorials?courseId=2
+2026-08-10T21:15:53.517+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.TutorialController.tutorials() with argument(s) = [2]
+2026-08-10T21:15:53.523+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.TutorialService.fetchTutorials() with argument(s) = [2]
+2026-08-10T21:15:53.561+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-6] org.hibernate.SQL                        : select t1_0.tutorial_id,t1_0.content,t1_0.course_id,t1_0.created_at,t1_0.title,t1_0.youtube_link from tutorial t1_0 where t1_0.course_id=?
+2026-08-10T21:15:53.702+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.TutorialService.fetchTutorials() with result = [TutorialResponse(tutorialId=1, courseId=2, title=Java Core, content=In this course, you will learn the fundamentals of building REST APIs., youtubeLink=https://www.youtube.com/watch?v=example, createdAt=2026-07-22T12:45:23.331568), TutorialResponse(tutorialId=2, courseId=2, title=Introduction to Java Streams, content=In this tutorial, we will learn how to use map, filter, and collect in Java., youtubeLink=https://www.youtube.com/watch?v=example, createdAt=2026-07-22T12:45:33.552061), TutorialResponse(tutorialId=6, courseId=2, title=GIT, content=In this course, you will learn the fundamentals of building REST APIs., youtubeLink=https://www.youtube.com/watch?v=example, createdAt=2026-07-22T12:46:06.497318)]
+2026-08-10T21:15:53.715+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-6] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.TutorialController.tutorials() with result = <200 OK OK,[TutorialResponse(tutorialId=1, courseId=2, title=Java Core, content=In this course, you will learn the fundamentals of building REST APIs., youtubeLink=https://www.youtube.com/watch?v=example, createdAt=2026-07-22T12:45:23.331568), TutorialResponse(tutorialId=2, courseId=2, title=Introduction to Java Streams, content=In this tutorial, we will learn how to use map, filter, and collect in Java., youtubeLink=https://www.youtube.com/watch?v=example, createdAt=2026-07-22T12:45:33.552061), TutorialResponse(tutorialId=6, courseId=2, title=GIT, content=In this course, you will learn the fundamentals of building REST APIs., youtubeLink=https://www.youtube.com/watch?v=example, createdAt=2026-07-22T12:46:06.497318)],[]>
+2026-08-10T21:16:18.650+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /courses?page=1&size=10
+2026-08-10T21:16:18.659+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
+2026-08-10T21:16:18.715+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-7] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
+2026-08-10T21:16:18.730+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /courses?page=1&size=10
+2026-08-10T21:16:18.737+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.CourseController.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:16:18.740+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.CourseService.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:16:18.744+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.course_id,c1_0.created_at,c1_0.description,c1_0.instructor_id,c1_0.status,c1_0.title from course c1_0 where c1_0.status=? order by c1_0.title limit ?
+2026-08-10T21:16:18.768+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:16:18.807+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:16:18.833+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.CourseService.getActiveCourses() with result = Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances
+2026-08-10T21:16:18.841+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-7] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.CourseController.getActiveCourses() with result = <200 OK OK,Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances,[]>
+2026-08-10T21:19:35.414+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /courses?page=1&size=10
+2026-08-10T21:19:35.422+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
+2026-08-10T21:19:35.428+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-8] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
+2026-08-10T21:19:35.437+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /courses?page=1&size=10
+2026-08-10T21:19:35.442+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-8] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.CourseController.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:19:35.445+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-8] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.CourseService.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:19:35.447+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-8] org.hibernate.SQL                        : select c1_0.course_id,c1_0.created_at,c1_0.description,c1_0.instructor_id,c1_0.status,c1_0.title from course c1_0 where c1_0.status=? order by c1_0.title limit ?
+2026-08-10T21:19:35.462+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:19:35.482+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:19:35.488+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-8] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.CourseService.getActiveCourses() with result = Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances
+2026-08-10T21:19:35.489+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-8] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.CourseController.getActiveCourses() with result = <200 OK OK,Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances,[]>
+2026-08-10T21:20:51.268+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /instructors/login
+2026-08-10T21:20:51.268+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-08-10T21:20:51.268+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /instructors/login
+2026-08-10T21:20:51.365+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-9] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.UserController.login() with argument(s) = [com.upl.tutorial.dto.LoginRequest@8acd93f]
+2026-08-10T21:20:51.365+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-9] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.AuthService.login() with argument(s) = [sasi@test.com, sasi@test.com]
+2026-08-10T21:20:51.365+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-9] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
+2026-08-10T21:20:51.376+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-9] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
+2026-08-10T21:20:51.559+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-9] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-08-10T21:20:51.559+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-9] com.upl.tutorial.service.AuthService     : **************Authenticated***********
+2026-08-10T21:20:51.574+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-9] com.upl.tutorial.service.AuthService     : **************ROLE ***********ROLE_INSTRUCTOR
+2026-08-10T21:20:51.574+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-9] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.AuthService.login() with result = LoginResponse(token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYXNpQHRlc3QuY29tIiwiaWF0IjoxNzg2Mzc3MDUxLCJleHAiOjE3ODY0NjM0NTF9.K-C1tnpuyeBGAMzhQFQYmPqZWipAy99zx_Jem_KE08VPRcTWgaZkGJ0siuF6jYZG, userRole=ROLE_INSTRUCTOR)
+2026-08-10T21:20:51.574+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-9] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.UserController.login() with result = <200 OK OK,LoginResponse(token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYXNpQHRlc3QuY29tIiwiaWF0IjoxNzg2Mzc3MDUxLCJleHAiOjE3ODY0NjM0NTF9.K-C1tnpuyeBGAMzhQFQYmPqZWipAy99zx_Jem_KE08VPRcTWgaZkGJ0siuF6jYZG, userRole=ROLE_INSTRUCTOR),[]>
+2026-08-10T21:21:27.561+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /courses?page=1&size=10
+2026-08-10T21:21:27.592+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.email=?
+2026-08-10T21:21:27.625+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-10] c.upl.tutorial.security.UserInfoService  : ********UserDetailsService *****************
+2026-08-10T21:21:27.670+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /courses?page=1&size=10
+2026-08-10T21:21:27.687+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-10] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.controller.CourseController.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:21:27.719+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-10] com.upl.tutorial.aspect.LoggingAspect    : Enter: com.upl.tutorial.service.CourseService.getActiveCourses() with argument(s) = [CoursePageRequest(page=1, size=10, sortBy=title, sortDir=asc)]
+2026-08-10T21:21:27.722+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-10] org.hibernate.SQL                        : select c1_0.course_id,c1_0.created_at,c1_0.description,c1_0.instructor_id,c1_0.status,c1_0.title from course c1_0 where c1_0.status=? order by c1_0.title limit ?
+2026-08-10T21:21:27.744+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:21:27.773+05:30 DEBUG 792 --- [tutorial] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.status from users u1_0 where u1_0.user_id=?
+2026-08-10T21:21:27.792+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-10] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.service.CourseService.getActiveCourses() with result = Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances
+2026-08-10T21:21:27.796+05:30  INFO 792 --- [tutorial] [http-nio-8080-exec-10] com.upl.tutorial.aspect.LoggingAspect    : Exit: com.upl.tutorial.controller.CourseController.getActiveCourses() with result = <200 OK OK,Page 1 of 1 containing com.upl.tutorial.dto.CoursePageResponse instances,[]>
+2026-08-10T21:23:38.941+05:30  INFO 792 --- [tutorial] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-10T21:23:39.021+05:30  INFO 792 --- [tutorial] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-08-10T21:23:39.131+05:30  INFO 792 --- [tutorial] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-10T21:23:39.233+05:30  INFO 792 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-08-10T21:23:39.428+05:30  INFO 792 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-08-10T21:24:29.036+05:30  INFO 10100 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : Starting TutorialApplicationTests using Java 21.0.10 with PID 10100 (started by user in E:\UPL\tutorial)
+2026-08-10T21:24:29.036+05:30 DEBUG 10100 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : Running with Spring Boot v4.0.7, Spring v7.0.8
+2026-08-10T21:24:29.050+05:30  INFO 10100 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-08-10T21:24:33.290+05:30  INFO 10100 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-10T21:24:33.477+05:30  INFO 10100 --- [tutorial] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 156 ms. Found 6 JPA repository interfaces.
+2026-08-10T21:24:36.388+05:30  INFO 10100 --- [tutorial] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-10T21:24:36.875+05:30  INFO 10100 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.19.Final
+2026-08-10T21:24:37.838+05:30  INFO 10100 --- [tutorial] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-10T21:24:37.935+05:30  INFO 10100 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-10T21:24:39.238+05:30  INFO 10100 --- [tutorial] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@489989eb
+2026-08-10T21:24:39.244+05:30  INFO 10100 --- [tutorial] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-10T21:24:39.562+05:30  INFO 10100 --- [tutorial] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/tutorial_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: tutorial_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-10T21:24:42.169+05:30  INFO 10100 --- [tutorial] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-10T21:24:42.419+05:30  INFO 10100 --- [tutorial] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-10T21:24:43.029+05:30  INFO 10100 --- [tutorial] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-10T21:24:49.011+05:30  INFO 10100 --- [tutorial] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-08-10T21:24:49.011+05:30  WARN 10100 --- [tutorial] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-08-10T21:24:49.645+05:30  WARN 10100 --- [tutorial] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-10T21:24:51.230+05:30 DEBUG 10100 --- [tutorial] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-08-10T21:24:53.547+05:30  INFO 10100 --- [tutorial] [main] c.upl.tutorial.TutorialApplicationTests  : Started TutorialApplicationTests in 25.594 seconds (process running for 35.891)
+2026-08-10T21:24:53.558+05:30  WARN 10100 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-10T21:24:53.559+05:30  WARN 10100 --- [tutorial] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-10T21:24:53.907+05:30  INFO 10100 --- [tutorial] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-10T21:24:53.915+05:30  INFO 10100 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-08-10T21:24:53.972+05:30  INFO 10100 --- [tutorial] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
