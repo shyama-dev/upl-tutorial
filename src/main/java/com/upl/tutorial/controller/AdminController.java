@@ -1,5 +1,7 @@
 package com.upl.tutorial.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.upl.tutorial.dto.AdminDashboardAnalyticsResponse;
 import com.upl.tutorial.dto.InstructorApproveRequest;
+import com.upl.tutorial.dto.PendingUserResponse;
 import com.upl.tutorial.model.ApprovalStatus;
 import com.upl.tutorial.model.UserStatus;
 import com.upl.tutorial.service.CourseService;
@@ -47,6 +50,9 @@ public class AdminController {
         return ResponseEntity.ok(courseService.fetchAdminAnalytics());
     }
 
-   
+    @GetMapping("/instructors/pending")
+    public ResponseEntity<List<PendingUserResponse>> getPendingInstructors() {
+        return ResponseEntity.ok(service.getPendingInstructors());
+    }
 
 }

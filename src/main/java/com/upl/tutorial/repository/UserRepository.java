@@ -1,10 +1,13 @@
 package com.upl.tutorial.repository;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import com.upl.tutorial.dto.InstructorMetricsDto;
+import com.upl.tutorial.model.UserRole;
+import com.upl.tutorial.model.UserStatus;
 import com.upl.tutorial.model.Users;
 
 @Repository
@@ -23,6 +26,8 @@ public interface UserRepository extends JpaRepository<Users,Integer>{
         WHERE u.role = 'INSTRUCTOR'
     """)
     InstructorMetricsDto getInstructorMetrics();
+
+    List<Users> findByRoleAndStatus(UserRole role, UserStatus status);
 
      
 }

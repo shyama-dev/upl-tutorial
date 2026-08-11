@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.upl.tutorial.dto.InstructorApproveRequest;
+import com.upl.tutorial.dto.PendingUserResponse;
 import com.upl.tutorial.dto.UserRequest;
 import com.upl.tutorial.dto.UserResponse;
 import com.upl.tutorial.exception.EntityNotFoundException;
@@ -19,6 +20,7 @@ import com.upl.tutorial.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
+import org.jspecify.annotations.Nullable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @RequiredArgsConstructor
@@ -73,6 +75,20 @@ public class UserService {
         approvalrequest.setTimestamp(LocalDateTime.now());
         repo.save(approvalrequest);
                 
+    }
+
+
+    public List<PendingUserResponse> getPendingInstructors() {
+        List<Users> pendingInstructors = userRepo.findByRoleAndStatus(UserRole.INSTRUCTOR, UserStatus.Pending);
+        if (pendingInstructors.isEmpty()) {
+            return List.of(); // or throw an exception, or return an empty list, depending on your requirements
+        }
+        return pendingInstructors.stream().map(user -> new PendingUserResponse(
+            user.getuserId(),
+            user.getName(),
+            user.getEmail()
+        )).toList();
+
     }
 
 }

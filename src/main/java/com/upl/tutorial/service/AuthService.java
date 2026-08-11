@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import com.upl.tutorial.dto.LoginResponse;
+import com.upl.tutorial.repository.UserRepository;
 import com.upl.tutorial.security.JwtService;
 
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,8 @@ public class AuthService {
 
     private final JwtService jwtService;
 
+    private final UserRepository userRepository;
+
     public LoginResponse login(String username, String password) {
 
         Authentication authentication = authenticationManager.authenticate(
@@ -33,12 +36,18 @@ public class AuthService {
         }
         log.info("**************Authenticated***********");
         String token = jwtService.generateToken(username);
-        String role = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority)
-                .findFirst().orElseThrow(() -> new RuntimeException("User role not found"));
-        log.info("**************ROLE ***********"+role);
+        // String role = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority)
+        //         .findFirst().orElseThrow(() -> new RuntimeException("User role not found"));
 
+        userRepository.findByEmail(username).ifPresent(
+            user -> {
+                loginResponse.setUserId(user.getuserId());
+                loginResponse.setUserRole(user.getRole().name().toLowerCase());
+                log.info("**************ROLE ***********"+loginResponse.getUserRole());
+
+            });
+        
         loginResponse.setToken(token);
-        loginResponse.setUserRole(role.substring(5).toLowerCase()); // Remove "ROLE_" prefix from the role
         return loginResponse;
 
     }

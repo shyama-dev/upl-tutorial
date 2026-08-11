@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginResponse {
-
-    private  String token;
-    private  String userRole;
-    private int userId;
+public class PendingUserResponse {
+   private int userId;
+   private String name;
+   private String email;
     
 }
