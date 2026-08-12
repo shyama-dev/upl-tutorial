@@ -2,7 +2,6 @@ package com.upl.tutorial.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,13 +26,6 @@ public class UserController {
     
     private final UserService service;
     private final AuthService authService;
-
-     @GetMapping("/")
-     public String greet(){
-
-        System.out.println("Heloooooo ");
-        return "Heloooo ";
-     }
 
     @SecurityRequirements(value = {})
     @PostMapping("/register")

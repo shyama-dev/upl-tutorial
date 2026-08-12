@@ -4,21 +4,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.mock;
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.upl.tutorial.dto.TutorialManageRequest;
 import com.upl.tutorial.dto.TutorialRequest;
@@ -33,6 +41,7 @@ import com.upl.tutorial.repository.TutorialHistoryRepo;
 import com.upl.tutorial.repository.TutorialRepository;
 import com.upl.tutorial.repository.UserRepository;
 
+@ExtendWith(MockitoExtension.class)
 public class TutorialServiceTest {
 
     @Mock
@@ -50,232 +59,158 @@ public class TutorialServiceTest {
     @InjectMocks
     private TutorialService tutorialService;
 
-    private Course course;
-    private Tutorial tutorial;
-    private Users instructor;
-/*
     @BeforeEach
     void setUp() {
-        course = new Course();
-        // Assuming setters or constructor exist; set basic fields if needed
+        // Clear security context before each test to ensure a clean state
+        SecurityContextHolder.clearContext();
+    }
 
-        tutorial = new Tutorial();
-        tutorial.setTitle("Original Title");
-        tutorial.setContent("Original Content");
-        tutorial.setyoutubeLink("https://youtube.com/original");
+    @AfterEach
+    void tearDown() {
+        // Always clean up after test execution
+        SecurityContextHolder.clearContext();
+    }
+
+    // ==========================================
+    // 1. Tests for create()
+    // ==========================================
+
+    @Test
+    void create_Success() {
+        // Given
+        TutorialRequest request = new TutorialRequest();
+        request.setCourseId(1);
+        request.setTitle("Java Basics");
+        request.setYoutubeLink("https://youtube.com/watch?v=123");
+        request.setContent("Introduction to Java");
+
+        Course course = new Course();
+
+        Tutorial savedTutorial = new Tutorial();
+        savedTutorial.setCourse(course);
+        savedTutorial.setTitle(request.getTitle());
+
+        when(courseRepo.findById(1)).thenReturn(Optional.of(course));
+        when(tutorialRepo.save(any(Tutorial.class))).thenAnswer(invocation -> {
+            Tutorial t = invocation.getArgument(0);
+            t.settutorialId(101);
+            return t;
+        });
+
+        int generatedId = tutorialService.create(request);
+
+        // Then
+        assertEquals(101, generatedId);
+        verify(courseRepo).findById(1);
+        verify(tutorialRepo).save(any(Tutorial.class));
+    }
+
+    @Test
+    void create_CourseNotFound_ThrowsEntityNotFoundException() {
+        // Given
+        TutorialRequest request = new TutorialRequest();
+        request.setCourseId(99);
+
+        when(courseRepo.findById(99)).thenReturn(Optional.empty());
+
+        // When & Then
+        EntityNotFoundException exception = assertThrows(
+                EntityNotFoundException.class,
+                () -> tutorialService.create(request));
+
+        assertEquals("Course not found for id :99", exception.getMessage());
+    }
+
+    // ==========================================
+    // 2. Tests for fetchTutorials()
+    // ==========================================
+
+    @Test
+    void fetchTutorials_Success() {
+        // Given
+        int courseId = 10;
+
+        Tutorial tutorial = new Tutorial();
+        tutorial.setTitle("Spring Boot");
+        tutorial.setContent("Spring Security");
+        tutorial.setyoutubeLink("https://youtube.com/watch?v=abc");
         tutorial.setcreatedAt(LocalDateTime.now());
 
-        instructor = new Users();
+        when(tutorialRepo.findByCourse_CourseId(courseId)).thenReturn(List.of(tutorial));
+
+        // When
+        List<TutorialResponse> response = tutorialService.fetchTutorials(courseId);
+
+        // Then
+        assertNotNull(response);
+        assertEquals(1, response.size());
+        assertEquals("Spring Boot", response.get(0).getTitle());
+        verify(tutorialRepo).findByCourse_CourseId(courseId);
     }
 
     // ==========================================
-    // Tests for create()
+    // 3. Tests for updateTutorial()
     // ==========================================
-    @Nested
-    @DisplayName("create()")
-    class CreateTests {
 
-        @Test
-        @DisplayName("Should create tutorial successfully when course exists")
-        void create_Success() {
-            // Arrange
-            TutorialRequest request = new TutorialRequest();
-            request.setCourseId(1);
-            request.setTitle("Java Basics");
-            request.setContent("Introductory Java content");
-            request.setYoutubeLink("https://youtube.com/watch?v=123");
+    @Test
+    void updateTutorial_Success() {
+        // Given
+        TutorialManageRequest request = new TutorialManageRequest();
+        request.setTutorialId(1);
+        request.setTitle("Updated Title");
+        request.setContent("Updated Content");
+        request.setYoutubeLink("https://youtube.com/updated");
+        request.setChanges("Updated content and title");
+        mockSecurityContext("instructor@test.com");
+        Tutorial existingTutorial = new Tutorial();
+        existingTutorial.setTitle("Old Title");
 
-            Tutorial savedTutorial = new Tutorial();
-            // Simulating assigned ID on save (assumes gettutorialId returns 100)
-            savedTutorial.settutorialId(100);
-            // Adjust mock return value matching your entity's getter implementation
+        Users mockUser = new Users();
 
-            when(courseRepo.findById(1)).thenReturn(Optional.of(course));
-            when(tutorialRepo.save(any(Tutorial.class))).thenReturn(savedTutorial);
+        when(tutorialRepo.findById(1)).thenReturn(Optional.of(existingTutorial));
+        when(userRepo.findByEmail("instructor@test.com")).thenReturn(Optional.of(mockUser));
 
-            // Act
-            int tutorialId = tutorialService.create(request);
+        // When
+        tutorialService.updateTutorial(request);
 
-            // Assert
-            assertEquals(100, tutorialId, "Tutorial ID should match saved tutorial ID");
-            verify(courseRepo, times(1)).findById(1);
+        // Then
+        assertEquals("Updated Title", existingTutorial.getTitle());
+        assertEquals("Updated Content", existingTutorial.getContent());
+        assertEquals("https://youtube.com/updated", existingTutorial.getyoutubeLink());
 
-            ArgumentCaptor<Tutorial> captor = ArgumentCaptor.forClass(Tutorial.class);
-            verify(tutorialRepo, times(1)).save(captor.capture());
-
-            Tutorial capturedTutorial = captor.getValue();
-
-            assertEquals(course, capturedTutorial.getCourse());
-            assertEquals("Java Basics", capturedTutorial.getTitle());
-            assertEquals("Introductory Java content", capturedTutorial.getContent());
-            assertEquals("https://youtube.com/watch?v=123", capturedTutorial.getyoutubeLink());
-            assertNotNull(capturedTutorial.getcreatedAt());
-        }
-
-        @Test
-        @DisplayName("Should throw EntityNotFoundException when course does not exist")
-   void create_CourseNotFound() {
-    // Arrange
-    TutorialRequest request = new TutorialRequest();
-    request.setCourseId(99);
-
-    when(courseRepo.findById(99)).thenReturn(Optional.empty());
-
-    // Act & Assert
-    EntityNotFoundException exception = assertThrows(
-        EntityNotFoundException.class, 
-        () -> tutorialService.create(request)
-    );
-
-    assertEquals("Course not found for id :99", exception.getMessage());
-    verify(tutorialRepo, never()).save(any());
-    }
+        verify(tutorialHistoryRepo).save(any(TutorialHistory.class));
     }
 
-    // ==========================================
-    // Tests for fetchTutorials()
-    // ==========================================
-    @Nested
-    @DisplayName("fetchTutorials()")
-    class FetchTutorialsTests {
+    @Test
+    void updateTutorial_TutorialNotFound_ThrowsEntityNotFoundException() {
+        // Given
+        TutorialManageRequest request = new TutorialManageRequest();
+        request.setTutorialId(999);
 
-        @Test
-        @DisplayName("Should return list of TutorialResponse when tutorials exist")
-        void fetchTutorials_Success() {
-            // Arrange
-            int courseId = 1;
-            when(tutorialRepo.findByCourse_CourseId(courseId)).thenReturn(List.of(tutorial));
+        when(tutorialRepo.findById(999)).thenReturn(Optional.empty());
 
-            // Act
-            List<TutorialResponse> responses = tutorialService.fetchTutorials(courseId);
+        // When & Then
+        EntityNotFoundException exception = assertThrows(
+                EntityNotFoundException.class,
+                () -> tutorialService.updateTutorial(request));
 
-            // Assert
-            assertThat(responses).hasSize(1);
-            TutorialResponse response = responses.get(0);
-            assertThat(response.getTitle()).isEqualTo("Original Title");
-            assertThat(response.getContent()).isEqualTo("Original Content");
-            assertThat(response.getYoutubeLink()).isEqualTo("https://youtube.com/original");
-
-            verify(tutorialRepo, times(1)).findByCourse_CourseId(courseId);
-        }
-
-        @Test
-        @DisplayName("Should return empty list when no tutorials exist for course")
-        void fetchTutorials_Empty() {
-            // Arrange
-            int courseId = 1;
-            when(tutorialRepo.findByCourse_CourseId(courseId)).thenReturn(Collections.emptyList());
-
-            // Act
-            List<TutorialResponse> responses = tutorialService.fetchTutorials(courseId);
-
-            // Assert
-            assertThat(responses).isEmpty();
-            verify(tutorialRepo, times(1)).findByCourse_CourseId(courseId);
-        }
+        assertEquals("Tutorial not found for id :999", exception.getMessage());
     }
+private void mockSecurityContext(String expectedEmail) {
+        // 1. Mock UserDetails
+        UserDetails userDetails = mock(UserDetails.class);
+        when(userDetails.getUsername()).thenReturn(expectedEmail);
 
-    // ==========================================
-    // Tests for updateTutorial()
-    // ==========================================
-    @Nested
-    @DisplayName("updateTutorial()")
-    class UpdateTutorialTests {
+        // 2. Mock Authentication
+        Authentication authentication = mock(Authentication.class);
+        when(authentication.getPrincipal()).thenReturn(userDetails);
 
-        @Test
-        @DisplayName("Should update tutorial fields and record history when input is valid")
-        void updateTutorial_Success() {
-            // Arrange
-            TutorialManageRequest request = new TutorialManageRequest();
-            request.setTutorialId(10);
-            request.setInstructorId(5);
-            request.setTitle("Updated Title");
-            request.setContent("Updated Content");
-            request.setYoutubeLink("https://youtube.com/updated");
-            request.setChanges("Updated title, content, and video link");
+        // 3. Mock SecurityContext
+        SecurityContext securityContext = mock(SecurityContext.class);
+        when(securityContext.getAuthentication()).thenReturn(authentication);
 
-            when(tutorialRepo.findById(10)).thenReturn(Optional.of(tutorial));
-            when(userRepo.findById(5)).thenReturn(Optional.of(instructor));
-
-            // Act
-            tutorialService.updateTutorial(request);
-
-            // Assert
-            assertThat(tutorial.getTitle()).isEqualTo("Updated Title");
-            assertThat(tutorial.getContent()).isEqualTo("Updated Content");
-            assertThat(tutorial.getyoutubeLink()).isEqualTo("https://youtube.com/updated");
-
-            ArgumentCaptor<TutorialHistory> historyCaptor = ArgumentCaptor.forClass(TutorialHistory.class);
-            verify(tutorialHistoryRepo, times(1)).save(historyCaptor.capture());
-
-            TutorialHistory savedHistory = historyCaptor.getValue();
-            assertThat(savedHistory.getTutorial()).isEqualTo(tutorial);
-            assertThat(savedHistory.getInstructor()).isEqualTo(instructor);
-            assertThat(savedHistory.getChanges()).isEqualTo("Updated title, content, and video link");
-            assertThat(savedHistory.getmodifiedAt()).isNotNull();
-        }
-
-        @Test
-        @DisplayName("Should ignore updates for null or blank fields")
-        void updateTutorial_PartialUpdate_IgnoreBlankOrNull() {
-            // Arrange
-            TutorialManageRequest request = new TutorialManageRequest();
-            request.setTutorialId(10);
-            request.setInstructorId(5);
-            request.setTitle(" "); // blank -> should not update
-            request.setContent(null); // null -> should not update
-            request.setYoutubeLink(""); // empty -> should not update
-            request.setChanges("No real field changes");
-
-            when(tutorialRepo.findById(10)).thenReturn(Optional.of(tutorial));
-            when(userRepo.findById(5)).thenReturn(Optional.of(instructor));
-
-            // Act
-            tutorialService.updateTutorial(request);
-
-            // Assert — original values should remain untouched
-            assertThat(tutorial.getTitle()).isEqualTo("Original Title");
-            assertThat(tutorial.getContent()).isEqualTo("Original Content");
-            assertThat(tutorial.getyoutubeLink()).isEqualTo("https://youtube.com/original");
-
-            verify(tutorialHistoryRepo, times(1)).save(any(TutorialHistory.class));
-        }
-
-        @Test
-        @DisplayName("Should throw EntityNotFoundException when tutorial not found")
-        void updateTutorial_TutorialNotFound() {
-            // Arrange
-            TutorialManageRequest request = new TutorialManageRequest();
-            request.setTutorialId(99);
-
-            when(tutorialRepo.findById(99)).thenReturn(Optional.empty());
-
-            // Act & Assert
-            assertThatThrownBy(() -> tutorialService.updateTutorial(request))
-                    .isInstanceOf(EntityNotFoundException.class)
-                    .hasMessage("Tutorial not found for id :99");
-
-            verify(userRepo, never()).findById(any());
-            verify(tutorialHistoryRepo, never()).save(any());
-        }
-
-        @Test
-        @DisplayName("Should throw EntityNotFoundException when instructor (user) not found")
-        void updateTutorial_InstructorNotFound() {
-            // Arrange
-            TutorialManageRequest request = new TutorialManageRequest();
-            request.setTutorialId(10);
-            request.setInstructorId(99);
-
-            when(tutorialRepo.findById(10)).thenReturn(Optional.of(tutorial));
-            when(userRepo.findById(99)).thenReturn(Optional.empty());
-
-            // Act & Assert
-            assertThatThrownBy(() -> tutorialService.updateTutorial(request))
-                    .isInstanceOf(EntityNotFoundException.class)
-                    .hasMessage("Instructor not found for id :99");
-
-            verify(tutorialHistoryRepo, never()).save(any());
-        }
-    } */
+        // 4. Set the mocked context in SecurityContextHolder
+        SecurityContextHolder.setContext(securityContext);
+    }
+ 
 }

@@ -28,7 +28,7 @@ public class TutorialController {
     private final TutorialService service;
 
     @GetMapping
-    public ResponseEntity<List<TutorialResponse>> tutorials(@RequestParam int courseId){
+    public ResponseEntity<List<TutorialResponse>> fetchTutorials(@RequestParam int courseId){
 
         List<TutorialResponse> tutorials = service.fetchTutorials(courseId);
         if (tutorials.isEmpty()) {
