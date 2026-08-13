@@ -21,6 +21,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -49,16 +50,18 @@ public class CourseControllerTest {
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(courseController).build();
+
     }
 
     // --- 1. getActiveCourses Tests ---
 
     @Test
     void getActiveCourses_WhenCoursesExist_ShouldReturnOkAndPage() throws Exception {
-        CoursePageResponse responseItem = new CoursePageResponse(); 
+        CoursePageResponse responseItem = new CoursePageResponse();
         InstructorResponse instructorResponse = new InstructorResponse();
         responseItem.setInstructor(instructorResponse);
-        Page<CoursePageResponse> coursePage = new PageImpl<>(List.of(responseItem));
+
+        Page<CoursePageResponse> coursePage = new PageImpl<>(List.of(responseItem), PageRequest.of(0, 10), 1);
 
         when(courseService.getActiveCourses(any(CoursePageRequest.class))).thenReturn(coursePage);
 
@@ -82,17 +85,17 @@ public class CourseControllerTest {
 
     // --- 2. getCoursesByInstructor Tests ---
 
-    @Test
-    void getCoursesByInstructor_WhenCoursesExist_ShouldReturnOkAndPage() throws Exception {
-        Page<CoursePageResponse> coursePage = new PageImpl<>(List.of(new CoursePageResponse()));
+   @Test
+void getCoursesByInstructor_WhenCoursesExist_ShouldReturnOkAndPage() throws Exception {
+    Page<CoursePageResponse> coursePage = new PageImpl<>(List.of(new CoursePageResponse()), PageRequest.of(0, 10), 1);
 
-        when(courseService.getCoursesByLoggedInInstructor(any(CoursePageRequest.class))).thenReturn(coursePage);
+    when(courseService.getCoursesByLoggedInInstructor(any(CoursePageRequest.class))).thenReturn(coursePage);
 
-        mockMvc.perform(get("/courses/instructor"))
-                .andExpect(status().isOk());
+    mockMvc.perform(get("/courses/instructor"))
+            .andExpect(status().isOk());
 
-        verify(courseService).getCoursesByLoggedInInstructor(any(CoursePageRequest.class));
-    }
+    verify(courseService).getCoursesByLoggedInInstructor(any(CoursePageRequest.class));
+}
 
     @Test
     void getCoursesByInstructor_WhenNoCourses_ShouldReturnNoContent() throws Exception {
@@ -110,7 +113,7 @@ public class CourseControllerTest {
 
     @Test
     void createCourse_ShouldReturnCreatedAndCourseId() throws Exception {
-        CourseRequest request = new CourseRequest(); 
+        CourseRequest request = new CourseRequest();
         request.setTitle("Sample Course");
         request.setDescription("Sample Description");
         int generatedId = 101;
@@ -131,6 +134,7 @@ public class CourseControllerTest {
     @Test
     void updateCourse_ShouldReturnOkAndSuccessMessage() throws Exception {
         CourseManageRequest request = new CourseManageRequest();
+        request.setCourseId(101);
 
         mockMvc.perform(put("/courses")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -156,5 +160,5 @@ public class CourseControllerTest {
 
         verify(courseService).deleteCourse(any(CourseManageRequest.class));
     }
-    
+
 }
